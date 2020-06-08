@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('components/library'); -%>
+    <title>Admin Page</title>
+</head>
+<body>
+  <%- include('components/header'); -%>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">User management</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Employee management</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <main class="mt-5 pt-3">
+          <div class="container">
+            <div style="border: 1px solid cornflowerblue; border-radius:5px;">
+              <div class="card-header text-right">
+                <button type="submit" class="btn btn-success" title="Add" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Add</button>
+                <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add user</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="text-dark">
+                          <div class="form-group row">
+                              <label for="txtnme" class="col-4 col-form-label">UserID</label>
+                              <div class="col-8">
+                                <input type="text" class="form-control" id="txtUserID" placeholder="UserID">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="txtphone" class="col-4 col-form-label">UserName</label>
+                              <div class="col-8">
+                                <input type="text" class="form-control" id="txtUserName" placeholder="Name">
+                            </div>
+                          </div>
+                          <di class="form-group row">
+                            <label for="txtgmail" class="col-4 col-form-label" >Password</label>
+                            <div class="col-8">
+                              <input type="text" class="form-control" id="txtpassword" placeholder="Password">
+                          </div>
+                          </di>
+                          <div class="form-group row">
+                            <label for="txtaddress" class="col-4 col-form-label">Status</label>
+                            <div class="col-8">
+                              <select id="inputState" class="form-control">
+                                <option selected>0</option>
+                                <option selected>1</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="txtnme" class="col-4 col-form-label">EmployeeID</label>
+                            <div class="col-8">
+                              <input type="text" class="form-control" id="txtEmployeeID" placeholder="EmployeeID">
+                          </div>
+                        </div>
+                          <div class="form-group row">
+                            <label for="inputState" class="col-4 col-form-label"> Level</label>
+                            <div class="col-8">
+                              <select id="inputState" class="form-control">
+                                <option selected>0</option>
+                                <option selected>1</option>
+                                <option selected>2</option>
+                              </select>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">UserID</th>
+                        <th scope="col">UserName </th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">EmployeeID</th>
+                        <th scope="col">Level </th>
+                        <th scope="col">Handling </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">null</th>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>
+                          <button type="submit" class="btn btn-success" title="Edit"><i class="far fa-edit"></i> Edit</button>
+                          <button type="submit" class="btn btn-success" title="Delete"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        Chao nhung nguoi anh em thien lanh
+      </div>
+    </div>
+  </div>
+  <%- include('components/footer'); -%>
+</body>
+</html>
