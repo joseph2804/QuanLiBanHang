@@ -1,0 +1,34 @@
+{
+  "name": "quanlybanhang",
+  "version": "1.0.0",
+  "description": "Tên nhóm : Nice Boys",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DangDuyHiep/Quanlybanhang.git"
+  },
+  "author": "Nice Boys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DangDuyHiep/Quanlybanhang/issues"
+  },
+  "homepage": "https://github.com/DangDuyHiep/Quanlybanhang#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "knex": "^0.21.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1"
+  }
+}
