@@ -10,24 +10,28 @@
 </head>
 <body>
     <%- include('components/header'); -%>
+    <% var productId = product[0].ProductId %>
+    <% var name = product[0].Name %>
+    <% var price = product[0].Price %>
+    <% var detail = product[0].Detail %>
    <div class="container text-secondary">
     <div class="row">
       <div class="col-sm-8 col-xs-12 col-md-6">
         <figure class="figure">
-        <img src="/images/products/hdd01.jpg" class="img-fluid img-thumbnail" alt="current product image">
-        <figcaption class="figure-caption">Ổ cứng HDD 1TB</figcaption>
+        <img src="/images/products/<%= productId %>.jpg" class="img-fluid img-thumbnail" alt="current product image">
+        <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
       <div class="col-sm-4 col-xs-12 col-md-6">
         <div class="row">
-          <div class="h2">HDD WD Blue 1TB</div>
+          <div class="h2"></div>
         </div>
         <div class="row">
-          <h2><i class="fas fa-money-check-alt"></i><i class="fa fa-inr" aria-hidden="true"></i> 499.000 VND</h2>
+          <h2><i class="fas fa-money-check-alt"></i><i class="fa fa-inr" aria-hidden="true"></i><%= price*0.5 %>  VND</h2>
           &nbsp; &nbsp;
-          <h3><del>600.000 VND</del></h3>
+          <h3><del><%= price %> VND</del></h3>
           &nbsp; &nbsp;
-          <h2 class="text-success">20% off</h2>
+          <h2 class="text-success">50% off</h2>
         </div>
         <div class="row">
           <h3 class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -35,16 +39,7 @@
           &nbsp; &nbsp;
         </div>
         <div class="row">
-          <p><i class="fas fa-check-square text-success"></i> <strong>Tính năng 1</strong> Mô tả </p>
-        </div>
-        <div class="row">
-          <p><i class="fas fa-check-square text-success"></i> <strong>Tính năng 2</strong> Mô tả </p>
-        </div>
-        <div class="row">
-          <p><i class="fas fa-check-square text-success"></i> <strong>Tính năng 3</strong> Mô tả </p>
-        </div>
-        <div class="row">
-          <p><i class="fas fa-check-square text-success"></i> <strong>Tính năng 4</strong> Mô tả </p>
+          <p><i class="fas fa-check-square text-success"></i> <strong>Tính năng</strong> <%= detail %> </p>
         </div>
         <div class="row">
           <h5>Nhà cung cấp: &nbsp; &nbsp;</h5>

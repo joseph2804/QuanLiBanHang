@@ -2,7 +2,7 @@
 
 var express = require('express');
 var server = express.Router();
-var LoginHelper = require('../scripts/ProductHelper');
+var LoginHelper = require('../scripts/LoginHelper');
 var RegisterHelper = require('../scripts/RegisterHelper');
 
 server.get('/', function (req, res) {
@@ -13,16 +13,16 @@ server.get('/', function (req, res) {
 server.post('/login', function (req, res) {
 
     var reqData = req.body;
-    var email = reqData.email;
+    var username = reqData.username;
     var password = reqData.password;
 
-    if (!email || !password)
+    if (!username || !password)
         return res.json({
             error: true,
             message: 'Chưa nhập tài khoản & mật khẩu'
         });
 
-    LoginHelper.checkInput(email, password, function (err, result) {
+    LoginHelper.checkInput(username, password, function (err, result) {
         if (err)
             return res.json({
                 error: true,
@@ -45,60 +45,7 @@ server.get('/register', function (req, res) {
     res.render('register');
 });
 
-server.post('/login', function (req, res) {
-    var redirectTo = req.session.redirectTo || '/account';
-
-    if (LoginHelper.getCurrentCustomer(req))
-        return res.redirect(redirectTo);
-
-    var reqData = req.body;
-    var email = reqData.email;
-    var password = reqData.password;
-
-    if (!email || !password)
-        return res.json({
-            error: true,
-            message: 'Chưa nhập tài khoản & mật khẩu'
-        });
-
-    LoginHelper.checkInput(email, password, function (err, result) {
-        if (err)
-            return res.json({
-                error: true,
-                message: err.message
-            });
-
-        if (result.length === 0)
-            return res.json({
-                error: true,
-                message: 'Tên đăng nhập hoặc mật khẩu không đúng'
-            });
-
-        var account = new AccountModel(result[0]);
-
-        req.session.User = {
-            email: email,
-            id: account.id,
-            name: account.name,
-            isAdmin: account.isAdmin
-        };
-
-        LoginHelper.checkAdminRole(account.email, function (err, result) {
-            if (!err && result.length > 0) req.session.User.isAdmin = !!result[0].Level;
-
-            return res.json({
-                error: false,
-                redirect: redirectTo
-            });
-        });
-    });
-});
-
 server.get('/logout', function (req, res) {
-    req.session.destroy(function (err) {
-        if (err) return res.send(err);
-    });
-
     res.redirect('/login');
 });
 

@@ -125,57 +125,24 @@
                     </div>
                 </div>
                 <div class="row">
+                    <% products.forEach(product => { %>
+                    <% var name = product.Name; %>
+                    <% var price = product.Price; %>
+                    <% var id = product.ProductId; %>
+                    <% var discount = price*0.5; %>
                     <div class=" col-xl-3 col-md-6 mt-2  product-sh">
                         <div class="product-show">
-                            <img src="/images/product/hdd01.jpg" class="img-fluid img-rounded img-pro" alt="">
+                            <img src="/images/product/<%= id %>.jpg" class="img-fluid img-rounded img-pro" alt="">
                             <span class="discout">-50%</span>
                         </div>
                         <div class="gia">
-                            <p class="h6" style="text-align: center;">SSD Crucial BX500 3D NAND SATA III 2.5 inch 120GB
-                                CT120BX500SSD1</p>
-                            <p>600.000đ <span class="price-discout">420.000đ</span></p>
-                            <button type="button" class="btn btn-outline-success">Mua hàng</button>
-                            <button type="button" class="btn btn-outline-success details">Xem chi tiết</button>
+                            <p class="h6" style="text-align: center;"><%= name %></p>
+                            <p><span>Price: </span> <%= price %>--><span class="price-discout"><span>Discount: </span> <%= discount %></span></p>
+                            <button type="button" class="btn btn-outline-success"><a href="">Mua hàng</a></button>
+                            <button type="button" class="btn btn-outline-success details"><a href="/product/detail?productId=<%= id %>">Xem chi tiết</a></button>
                         </div>
                     </div>
-                    <div class=" col-xl-3 col-md-6 mt-2  product-sh">
-                        <div class="product-show">
-                            <img src="/images/product/hdd01.jpg" class="img-fluid img-rounded img-pro" alt="">
-                            <span class="discout">-50%</span>
-                        </div>
-                        <div class="gia">
-                            <p class="h6" style="text-align: center;">SSD Crucial BX500 3D NAND SATA III 2.5 inch 120GB
-                                CT120BX500SSD1</p>
-                            <p>600.000đ <span class="price-discout">420.000đ</span></p>
-                            <button type="button" class="btn btn-outline-success">Mua hàng</button>
-                            <button type="button" class="btn btn-outline-success details">Xem chi tiết</button>
-                        </div>
-                    </div>
-                    <div class=" col-xl-3 col-md-6 mt-2  product-sh">
-                        <div class="product-show">
-                            <img src="/images/product/hdd01.jpg" class="img-fluid img-rounded img-pro" alt="">
-                            <span class="discout">-50%</span>
-                        </div>
-                        <div class="gia">
-                            <p class="h6" style="text-align: center;">SSD Crucial BX500 3D NAND SATA III 2.5 inch 120GB
-                                CT120BX500SSD1</p>
-                            <p>600.000đ <span class="price-discout">420.000đ</span></p>
-                            <button type="button" class="btn btn-outline-success buy">Mua hàng</button>
-                            <button type="button" class="btn btn-outline-success details">Xem chi tiết</button>
-                        </div>
-                    </div>
-                    <div class=" col-xl-3 col-md-6 mt-2  product-sh">
-                        <div class="product-show">
-                            <img src="/images/product/hdd01.jpg" class="img-fluid img-rounded img-pro" alt="">
-                            <span class="discout">-50%</span>
-                        </div>
-                        <div class="gia">
-                            <p class="h6" style="text-align: center;">SSD Crucial BX500 3D NAND SATA III 2.5 inch 120GB
-                                CT120BX500SSD1</p>
-                            <p>600.000đ <span class="price-discout">420.000đ</span></p>
-                            <button type="button" class="btn btn-outline-success">Mua hàng</button>
-                            <button type="button" class="btn btn-outline-success details">Xem chi tiết</button>
-                        </div>
+                    <% }) %>
                     </div>
                 </div>
             </div>
