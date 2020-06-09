@@ -1,0 +1,9 @@
+node_modules/
+ProductDetail/
+npm-debug.log
+.vscode
+.history
+/client/.sass-cache
+/client/config.rb
+/client/scss
+/client/images/
