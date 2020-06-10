@@ -17,23 +17,34 @@
                         <div class="menu-left">
                           <ul class="nav flex-column">
                             <li class="nav-item li-danhmuc">
-                              <a class="nav-link active danhmuc" href="#">
+                              <a class="nav-link active danhmuc"  href="#">
                                 <i class="fas fa-bars ic-danhmuc"></i>DANH MỤC SẢN PHẨM<i class="fas fa-angle-down ic-list"></i></a>
                             </li>
             
                             <li class="nav-item dropdown">
-                              <a class="nav-link menu-t" href="#">Ổ cứng SSD di động<span class="ic-menu-t"><i
+                              <a class="nav-link menu-t" href="#" style="border-left: 2px solid red;">Ổ cứng SSD di động<span class="ic-menu-t"><i
                                     class="fas fa-angle-right"></i></span></a>
                               <div class="dropdown-content">
-                                <a class="dropdown-item" href="#">Sam sung 250GB</a>
+                                <a class="dropdown-item" class="text-danhmuc" href="#">Sam sung 250GB</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Kington 560GB</a>
+                                <a class="dropdown-item" class="text-danhmuc" href="#">Kington 560GB</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Sam sung 560GB</a>
+                                <a class="dropdown-item" class="text-danhmuc" href="#">Sam sung 560GB</a>
                               </div>
                             </li>
                             <li class="nav-item dropdown">
-                              <a class="nav-link menu-t" href="#">Lap top<span class="ic-menu-t"><i
+                              <a class="nav-link menu-t" href="#" style="border-left: 2px solid pink;">Lap top<span class="ic-menu-t"><i
+                                    class="fas fa-angle-right"></i></span></a>
+                              <div class="dropdown-content">
+                                <a class="dropdown-item" href="#">SSD 1T</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link menu-t" href="#" style="border-left: 2px solid greenyellow;">Apple<span class="ic-menu-t"><i
                                     class="fas fa-angle-right"></i></span></a>
                               <div class="dropdown-content">
                                 <a class="dropdown-item" href="#">phan huu tin</a>
@@ -44,18 +55,7 @@
                               </div>
                             </li>
                             <li class="nav-item dropdown">
-                              <a class="nav-link menu-t" href="#">Apple<span class="ic-menu-t"><i
-                                    class="fas fa-angle-right"></i></span></a>
-                              <div class="dropdown-content">
-                                <a class="dropdown-item" href="#">phan huu tin</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link menu-t" href="#">Đồng hồ<span class="ic-menu-t"><i
+                              <a class="nav-link menu-t" href="#" style="border-left: 2px solid orange;">Đồng hồ<span class="ic-menu-t"><i
                                     class="fas fa-angle-right"></i></span></a>
                               <div class="dropdown-content">
                                 <a class="dropdown-item" href="#">Sam sung 250GB</a>
@@ -66,7 +66,7 @@
                               </div>
                             </li>
                             <li class="nav-item dropdown">
-                              <a class="nav-link menu-t" href="#">Phụ kiện<span class="ic-menu-t"><i
+                              <a class="nav-link menu-t" href="#" style="border-left: 2px solid orchid;">Phụ kiện<span class="ic-menu-t"><i
                                     class="fas fa-angle-right"></i></span></a>
                               <div class="dropdown-content">
                                 <a class="dropdown-item" href="#">phan huu tin</a>
@@ -78,7 +78,7 @@
                             </li>
             
                             <li class="nav-item menu-b">
-                              <a class="nav-link menu-t " href="#">Máy ảnh & máy quay phim<span class="ic-menu-t"><i
+                              <a class="nav-link menu-t " href="#" style="border-left: 2px solid yellow;">Máy ảnh & máy quay phim<span class="ic-menu-t"><i
                                     class="fas fa-angle-right"></i></span></a>
                               <div class="dropdown-content">
                                 <a class="dropdown-item" href="#">Sam sung 250GB</a>
@@ -132,7 +132,7 @@
                     <% var discount = price*0.5; %>
                     <div class=" col-xl-3 col-md-6 mt-2  product-sh">
                         <div class="product-show">
-                            <img src="/images/product/<%= id %>.jpg" class="img-fluid img-rounded img-pro" alt="">
+                            <img src="/images/products/<%= id %>.jpg" class="img-fluid img-rounded img-pro" alt="">
                             <span class="discout">-50%</span>
                         </div>
                         <div class="gia">
