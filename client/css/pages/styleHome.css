@@ -256,3 +256,7 @@
 .img-pro:hover{
     transform: scale(1.1);
 }
+
+.text-danhmuc{
+    padding: 12px 30px 12px 30px;
+}
